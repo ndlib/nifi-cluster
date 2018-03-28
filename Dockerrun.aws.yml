@@ -1,0 +1,20 @@
+---
+AWSEBDockerrunVersion: '1'
+# Volumes:
+#     -    HostDirectory: /var/app/mydb
+#          ContainerDirectory: /etc/mysql
+Logging: /opt/nifi/nifi-1.5.0/logs
+prop_replace 'nifi.web.http.port'               "${NIFI_WEB_HTTP_PORT:-8080}"
+prop_replace 'nifi.web.http.host'               "${NIFI_WEB_HTTP_HOST:-$HOSTNAME}"
+prop_replace 'nifi.remote.input.host'           "${NIFI_REMOTE_INPUT_HOST:-$HOSTNAME}"
+prop_replace 'nifi.remote.input.socket.port'    "${NIFI_REMOTE_INPUT_SOCKET_PORT:-10000}"
+# NIFI_HOME is defined by an ENV command in the backing Dockerfile
+export nifi_props_file=${NIFI_HOME}/conf/nifi.properties
+export hostname=$(hostname)
+
+root@ba5092bccc27:/opt/nifi/nifi-1.5.0# ls
+LICENSE  bin		     database_repository  lib			 run
+NOTICE	 conf		     docs		  logs			 state
+README	 content_repository  flowfile_repository  provenance_repository  work
+
+...
