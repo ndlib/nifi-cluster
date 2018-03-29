@@ -1,4 +1,4 @@
 {
   "AWSEBDockerrunVersion": "1",
-  "Logging": "/opt/nifi/nifi-1.5.0/logs",
+  "Logging": "/opt/nifi/nifi-1.5.0/logs"
 }
