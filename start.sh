@@ -24,7 +24,7 @@ prop_replace 'nifi.web.http.port'               "${NIFI_WEB_HTTP_PORT:-8080}"
 prop_replace 'nifi.web.http.host'               "${NIFI_WEB_HTTP_HOST:-$HOSTNAME}"
 prop_replace 'nifi.remote.input.host'           "${NIFI_REMOTE_INPUT_HOST:-$HOSTNAME}"
 prop_replace 'nifi.remote.input.socket.port'    "${NIFI_REMOTE_INPUT_SOCKET_PORT:-10000}"
-prop_replace 'nifi.web.proxy.host'              "${NIFI_WEB_PROXY_HOST}"
+#~ prop_replace 'nifi.web.proxy.host'              "${NIFI_WEB_PROXY_HOST}"
 prop_replace 'nifi.remote.input.secure'         'false'
 
 # Check if we are secured or unsecured
@@ -41,6 +41,11 @@ case ${AUTH} in
 
         . "${scripts_dir}/secure.sh"
         . "${scripts_dir}/update_login_providers.sh"
+        ;;
+    *)
+        if [ ! -z "${NIFI_WEB_PROXY_HOST}" ]; then
+            echo 'NIFI_WEB_PROXY_HOST was set but NiFi is not configured to run in a secure mode.  Will not update nifi.web.proxy.host.'
+        fi
         ;;
 esac
 
