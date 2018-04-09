@@ -5,5 +5,4 @@ COPY --chown=nifi:nifi common.sh ${NIFI_BASE_DIR}/scripts/
 RUN chmod +x ${NIFI_BASE_DIR}/scripts/start.sh
 RUN chmod +x ${NIFI_BASE_DIR}/scripts/common.sh
 ENV TZ=America/Indiana/Indianapolis
-RUN timedatectl set-timezone $TZ
 CMD ${NIFI_BASE_DIR}/scripts/start.sh
