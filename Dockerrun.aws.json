@@ -1,6 +1,6 @@
 {
   "AWSEBDockerrunVersion": "2",
-  "Logging": "/opt/nifi/logs"
+  "Logging": "/opt/nifi/logs",
   "Volumes": [
     {
       "HostDirectory": "/efs",
