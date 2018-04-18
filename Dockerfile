@@ -6,5 +6,4 @@ RUN chmod +x ${NIFI_BASE_DIR}/scripts/start.sh
 RUN chmod +x ${NIFI_BASE_DIR}/scripts/common.sh
 ENV TZ=America/Indiana/Indianapolis
 RUN ln -snf /opt/nifi/1.6.0/logs /opt/nifi/logs
-RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 CMD ${NIFI_BASE_DIR}/scripts/start.sh
