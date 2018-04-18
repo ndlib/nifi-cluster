@@ -1,3 +1,4 @@
+ARG NIFI_VERSION
 FROM apache/nifi:${NIFI_VERSION}
 EXPOSE 9090 8080 10000
 COPY --chown=nifi:nifi start.sh ${NIFI_BASE_DIR}/scripts/
