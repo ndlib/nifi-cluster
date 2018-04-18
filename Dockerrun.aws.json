@@ -6,15 +6,5 @@
       "HostDirectory": "/efs",
       "ContainerDirectory": "/opt/nifi/certs"
     }
-  ],
-  "containerDefinitions": [
-    {
-      "environment": [
-        {
-          "name": "NIFI_VERSION",
-          "value": "1.6.0"
-        }
-      ]
-    }
   ]
 }
