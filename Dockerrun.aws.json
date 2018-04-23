@@ -1,10 +1,19 @@
 {
-  "AWSEBDockerrunVersion": "1",
+  "AWSEBDockerrunVersion": "2",
   "Logging": "/opt/nifi/logs",
   "Volumes": [
     {
       "HostDirectory": "/efs",
       "ContainerDirectory": "/opt/nifi/certs"
     }
-  ]
+  ],
+  "portMappings": [
+    {
+      "hostPort": 8080,
+      "containerPort": 8080
+    },
+    {
+      "hostPort": 80,
+      "containerPort": 9090
+    }
 }
