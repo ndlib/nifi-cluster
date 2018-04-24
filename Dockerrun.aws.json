@@ -12,6 +12,7 @@
     {
       "name": "nifi",
       "image": "apache/nifi:1.6.0",
+      "memory": 10240,
       "portMappings": [
         {
           "hostPort": 8080,
