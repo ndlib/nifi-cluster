@@ -19,6 +19,7 @@
           "sourceVolume": "efs",
           "containerPath": "/opt/nifi/certs"
         }
+      ],
       "portMappings": [
         {
           "hostPort": 8080,
