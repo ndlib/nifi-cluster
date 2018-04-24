@@ -16,4 +16,5 @@
       "hostPort": 80,
       "containerPort": 9090
     }
+  ]
 }
