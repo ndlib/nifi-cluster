@@ -1,5 +1,5 @@
 {
-  "AWSEBDockerrunVersion": "2",
+  "AWSEBDockerrunVersion": "1",
   "Logging": "/opt/nifi/logs",
   "Volumes": [
     {
